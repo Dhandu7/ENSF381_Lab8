@@ -38,11 +38,6 @@ export const addProduct = (product) => {
 };
 
 // Edits an existing product by ID
-export const editProduct = async (id, product) => {
-    try {
-        const response = await axios.put(`${BASE_URL}/${id}`, JSON.stringify(product));
-        return response.data;
-    } catch (error) {
-        throw error; // Rethrow to allow caller to handle
-    }
+export const editProduct = (id, product) => {
+    return axios.put(`${BASE_URL}/${id}`, JSON.stringify(product));
 };
